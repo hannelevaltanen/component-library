@@ -4,11 +4,19 @@ module.exports = {
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   "addons": [
-    "@storybook/addon-links",
+    "@storybook/preset-create-react-app",
     "@storybook/addon-backgrounds/register",
     "@storybook/addon-contexts/register",
+    "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-docs",
-    "@storybook/preset-create-react-app"
+    "@storybook/addon-actions",
+    "@storybook/addon-knobs",
+    "@storybook/addon-a11y/register",
+    {
+      name: "@storybook/addon-docs",
+      options: {
+        configureJSX: true
+      }
+    }
   ]
 }
