@@ -6,6 +6,8 @@ import { GlobalStyle, darkTheme, defaultTheme } from './utils';
 
 const App = () => {
     const [useDarkTheme, setUseDarkTheme] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+
     return (
         <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
             
@@ -15,6 +17,10 @@ const App = () => {
 
             <SecondaryButton onClick={() => setUseDarkTheme(false)}>
                 Default Theme
+            </SecondaryButton>
+
+            <SecondaryButton onClick={() => setShowModal(!showModal)}>
+                Toggle Modal
             </SecondaryButton>
 
             <div style={{
@@ -33,7 +39,7 @@ const App = () => {
                 <PrimaryButton modifiers={["error"]}>Error</PrimaryButton>
                 <PrimaryButton modifiers={["success"]}>Success</PrimaryButton>
 
-                <SignUpModal />
+                <SignUpModal showModal={showModal} setShowModal={setShowModal} />
 
                 <GlobalStyle />
             </div>
